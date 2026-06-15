@@ -1,0 +1,364 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: #121212;
+    color: white;
+}
+
+header{
+    background: #E9FF00;
+    color:black;
+    padding: 20px;
+    text-align: center;
+}
+
+main{
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+}
+
+.estado{
+    background: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.estado h2{
+    margin-bottom: 10px;
+}
+/*estadisticas*/
+.persona{
+    background: #fffb21;
+    
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.acciones{
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+button{
+    flex:1;
+    background: #E9FF00;
+    color: black;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    margin-top:5px;
+}
+
+label{
+    font-weight:bold;
+}
+
+#sugerencias{
+    margin-top:10px;
+}
+
+select{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,td{
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: center;
+}
+
+th{
+    background: #ffff07;
+    color: black;
+}
+
+canvas{
+    background:white;
+    border-radius:10px;
+    padding:10px;
+}
+
+.persona{
+    background:#1f1f1f;
+    padding:15px;
+    border-radius:10px;
+}
+
+body{
+    background:#000;
+    color:white;
+    font-family:Arial, sans-serif;
+    margin:0;
+}
+
+.header-principal{
+
+    text-align:center;
+
+    background:#111;
+
+    border-bottom:3px solid #fbff00;
+
+    padding:20px;
+
+    position:relative;
+
+}
+
+.logo-modelo{
+
+    position:absolute;
+
+    top:70px;
+
+    right:300px;
+
+    width:80px;
+
+}
+
+.logo-ab{
+
+    position:absolute;
+
+    top:70px;
+
+    left:300px;
+
+    width:150px;
+
+}
+
+.logo-logistica{
+
+    width:220px;
+
+    margin-bottom:-10px;
+
+}
+
+.header-principal h1{
+
+    color:#eeff00;
+
+    margin:10px 0;
+
+}
+
+.header-principal p{
+
+    color:white;
+
+    font-size:18px;
+
+}
+
+.filtros{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-bottom:20px;
+
+}
+
+.filtros input,
+.filtros select{
+
+    padding:10px;
+
+    border-radius:8px;
+
+    border:none;
+
+}
+
+/* HISTORIAL */
+
+main{
+    padding:20px;
+}
+
+h1{
+    text-align:center;
+    color:#ffff00;
+}
+
+.filtros{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    margin-bottom:20px;
+    flex-wrap:wrap;
+}
+
+.filtros input,
+.filtros select{
+
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:#1f1f1f;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+}
+
+thead{
+
+    background:#f2ff00;
+
+    color:black;
+
+}
+
+th{
+
+    padding:15px;
+
+    text-align:center;
+
+}
+
+td{
+
+    padding:12px;
+
+    text-align:center;
+
+    border-bottom:1px solid #333;
+
+}
+
+tr:hover{
+
+    background:#2a2a2a;
+
+}
+
+button{
+
+    background:#ffff00;
+
+    color:black;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+}
+
+button:hover{
+
+    opacity:0.9;
+
+}
+
+.estado-activo{
+
+    color:#00ff66;
+
+    font-weight:bold;
+
+}
+
+.estado-finalizado{
+
+    color:#ff6666;
+
+    font-weight:bold;
+
+}
+
+/* TARJETAS DASHBOARD */
+
+.resumen{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+
+    gap:15px;
+
+    margin:20px;
+
+}
+
+.tarjeta{
+
+    background:#1f1f1f;
+
+    border-left:5px solid #f6ff00;
+
+    padding:20px;
+
+    border-radius:10px;
+
+    text-align:center;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.3);
+
+}
+
+.tarjeta h3{
+
+    color:#f7ff07;
+
+    font-size:28px;
+
+    margin:0;
+
+}
+
+.tarjeta p{
+
+    margin-top:10px;
+
+    color:white;
+
+}

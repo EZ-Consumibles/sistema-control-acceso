@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="logo-logistica.png">
+    <title>Control de Acceso</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <header class="header-principal">
+
+        <img
+        src="assets/lob-ab.png"
+        class="logo-ab"
+        alt="AB">
+
+    <img
+        src="assets/logo-modelo.png"
+        class="logo-modelo"
+        alt="Grupo Modelo">
+
+    <img
+        src="assets/logo-logistica.png"
+        class="logo-logistica"
+        alt="Logística">
+
+    <h1>
+        CONTROL DE ACCESO AL ALMACÉN DE PT
+    </h1>
+
+    <p>
+        Logística - Envases Zacatecas
+    </p>
+
+    <div class="resumen">
+
+    <div class="tarjeta">
+        <h3 id="usuariosRegistrados">0</h3>
+        <p>Usuarios Registrados</p>
+    </div>
+
+    <div class="tarjeta">
+        <h3 id="personasDentro">0</h3>
+        <p>Personas Dentro</p>
+    </div>
+
+    <div class="tarjeta">
+        <h3 id="accesosTotales">0</h3>
+        <p>Accesos Totales</p>
+    </div>
+
+    <div class="tarjeta">
+        <h3 id="accesosHoy">0</h3>
+        <p>Accesos Hoy</p>
+    </div>
+
+    <div class="tarjeta">
+        <h3 id="tiempoTotal">00:00:00</h3>
+        <p>Tiempo Acumulado</p>
+    </div>
+
+    <div class="tarjeta">
+        <h3 id="areaMasActiva">-</h3>
+        <p>Área Más Activa</p>
+    </div>
+
+</div>
+
+        </header>
+<center>
+        <div class="bienvenida">
+
+    <h2>
+        Sistema de Control de Acceso
+    </h2>
+
+    <p>
+        Registro y monitoreo de entradas
+        y salidas del almacén.
+    </p>
+
+</div>
+</center>
+    <main>
+
+        <div class="estado">
+
+            <h2 id="estado">🟢 LIBRE</h2>
+
+            <p>
+                Personas dentro:
+                <span id="ocupacion">0</span>
+            </p>
+
+        </div>
+
+        <div id="contenedorPersonas">
+
+        </div>
+
+        <div class="acciones">
+
+            <button onclick="location.href='usuarios.html'">
+                Registrar Usuario
+            </button>
+
+            <button onclick="location.href='entrada.html'">Registrar Entrada</button>
+
+            <button onclick="location.href='salida.html'">Registrar Salida</button>
+
+            <button onclick="irHistorial()">Historial</button>
+
+            <button onclick="irEstadisticas()">Estadísticas</button>
+
+            <button onclick="cerrarSesion()">Cerrar Sesión Admin</button>
+
+        </div>
+
+    </main>
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Usuario</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<header>
+    <h1>👤 REGISTRAR USUARIO</h1>
+</header>
+
+<main>
+
+    <label>Nombre Completo</label>
+
+    <input
+        type="text"
+        id="nombre"
+        placeholder="Nombre completo">
+
+    <br><br>
+
+    <label>Área</label>
+
+    <select id="area">
+
+        <option value="">Seleccione un área</option>
+
+        <option>Limpieza</option>
+        <option>Logística</option>
+        <option>Calidad</option>
+        <option>Ingeniería</option>
+        <option>Producción</option>
+        <option>Contratistas</option>
+        <option>Otros</option>
+
+    </select>
+
+    <div id="otroAreaContainer" style="display:none;">
+
+    <br>
+
+    <label>Especifique el área</label>
+
+    <input
+        type="text"
+        id="otroArea"
+        placeholder="Escriba el área">
+
+</div>
+
+    <br><br>
+
+    <button id="btnRegistrar">
+        Registrar Usuario
+    </button>
+
+    <br><br>
+
+    <button onclick="location.href='index.html'">
+        Volver
+    </button>
+
+</main>
+
+<script src="js/usuarios.js"></script>
+
+</body>
+</html>

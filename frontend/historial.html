@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Historial</title>
+        <link rel="stylesheet" href="css/estilos.css">
+    </head>
+    <body>
+        <header>
+            <h1>Historial de Accesos</h1>
+        </header>
+        <main>
+            <div class="filtros">
+
+    <input
+        type="text"
+        id="buscarNombre"
+        placeholder="Buscar nombre">
+
+    <select id="filtroArea">
+
+        <option value="">
+            Todas las áreas
+        </option>
+
+        <option>Limpieza</option>
+        <option>Logística</option>
+        <option>Calidad</option>
+        <option>Ingeniería</option>
+        <option>Producción</option>
+        <option>Contratistas</option>
+        <option>Otros</option>
+
+        <input type="date" id="filtroFecha">
+
+    </select>
+
+</div>
+
+<label>Fecha Inicio</label>
+
+<input
+    type="date"
+    id="fechaInicio">
+
+<label>Fecha Fin</label>
+
+<input
+    type="date"
+    id="fechaFin">
+
+<br><br>
+
+<button id="btnExcel">
+    📥 Exportar a Excel
+</button>
+
+<br><br>
+
+<br>
+            <table id="tabla">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Área</th>
+                        <th>Asunto</th>
+                        <th>Candado</th>
+                        <th>Entrada</th>
+                        <th>Salida</th>
+                        <th>Tiempo</th>
+                        <th>Estado</th>
+                    </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+            </table>
+            <br>
+            <button onclick="location.href='index.html'">
+                Volver
+            </button>
+        </main>
+        <script src="js/historial.js"></script>
+    </body>
+</html>
