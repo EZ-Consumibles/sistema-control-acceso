@@ -267,4 +267,4 @@ setInterval(() => {
     cargarDashboard();
     cargarResumen();
 
-}, 5000);
+}, 60000);
