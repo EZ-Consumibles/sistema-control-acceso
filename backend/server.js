@@ -25,15 +25,21 @@ app.use("/api/usuarios",usuariosRoutes);
 app.use("/api/entrada",entradaRoutes);
 
 app.get("/", (req, res) => {
-    res.send("Servidor Control de Acceso funcionando ");
+    res.sendFile(
+        path.join(
+            __dirname,
+            "../frontend/index.html"
+        )
+    );
+
 });
+
 
 app.get("/test-firebase", async (req, res) => {
 
     try {
 
-        const snapshot = await db.collection("areas").get();
-       
+        const snapshot = await db.collection("areas").get()
 
         res.json({
             documentos: snapshot.size
@@ -49,6 +55,10 @@ app.get("/test-firebase", async (req, res) => {
 
 });
 
-app.listen(3000, () => {
-    console.log("Servidor iniciado en puerto 3000");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(
+        `Servidor iniciado en puerto ${PORT}`
+    );
 });
