@@ -2,7 +2,7 @@ async function cargarDashboard() {
 
     try {
 
-        const respuesta = await fetch("http://localhost:3000/api/dashboard");
+        const respuesta = await fetch("/api/dashboard");
 
         const datos = await respuesta.json();
 
