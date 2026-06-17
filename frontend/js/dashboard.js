@@ -93,16 +93,25 @@ async function cargarResumen() {
                 acceso.estado === "activo"
             );
 
-        const tiempoTotal =
-            historial.reduce(
-                (total, acceso) =>
-                total +
-                (acceso.tiempoSegundos || 0),
-                0
-            );
+        const accesosFinalizados =
+    historial.filter(
+        acceso =>
+        acceso.estado === "finalizado"
+    );
 
-        const hoy =
-            new Date();
+        const tiempoPromedio =
+            accesosFinalizados.length > 0
+            ? Math.floor(
+                accesosFinalizados.reduce(
+                    (total, acceso) =>
+                    total +
+                    (acceso.tiempoSegundos || 0),
+                    0
+                ) /
+                accesosFinalizados.length
+            ): 0;
+
+        const hoy = new Date();
 
         const accesosHoy =
             historial.filter(acceso => {
@@ -193,14 +202,8 @@ async function cargarResumen() {
             .textContent =
             accesosHoy.length;
 
-        document
-            .getElementById(
-                "tiempoTotal"
-            )
-            .textContent =
-            formatearTiempo(
-                tiempoTotal
-            );
+        document.getElementById("tiempoPromedio")
+            .textContent =formatearTiempo(tiempoPromedio);
 
         document
             .getElementById(
