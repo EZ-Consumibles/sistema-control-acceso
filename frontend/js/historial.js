@@ -11,16 +11,11 @@ if (
 
 function formatearTiempo(segundos) {
 
-    const horas =
-        Math.floor(segundos / 3600);
+    const horas = Math.floor(segundos / 3600);
 
-    const minutos =
-        Math.floor(
-            (segundos % 3600) / 60
-        );
+    const minutos = Math.floor( (segundos % 3600) / 60 );
 
-    const segundosRestantes =
-        segundos % 60;
+    const segundosRestantes = segundos % 60;
 
     return `${horas
         .toString()
@@ -40,10 +35,7 @@ function formatearFecha(fecha) {
 
     try {
 
-        const fechaObj =
-            new Date(
-                fecha._seconds * 1000
-            );
+        const fechaObj = new Date( fecha._seconds * 1000 );
 
         return fechaObj.toLocaleString(
             "es-MX",
@@ -122,37 +114,27 @@ async function cargarHistorial() {
 
     try {
 
-        const respuesta =
-            await fetch(
-                "/api/historial"
-            );
+        const respuesta = await fetch( "/api/historial" );
 
-        const historial =
-            await respuesta.json();
+        const historial = await respuesta.json();
 
         historial.sort((a, b) => {
 
-            const fechaA =
-                a.entrada?._seconds || 0;
+            const fechaA =a.entrada?._seconds || 0;
 
-            const fechaB =
-                b.entrada?._seconds || 0;
+            const fechaB = b.entrada?._seconds || 0;
 
             return fechaB - fechaA;
 
         });
 
-        window.historialCompleto =
-            historial;
+        window.historialCompleto =  historial;
 
         renderizarTabla(historial);
 
     } catch (error) {
 
-        console.error(
-            "Error al cargar historial:",
-            error
-        );
+        console.error( "Error al cargar historial:", error );
 
     }
 
@@ -223,67 +205,35 @@ function aplicarFiltros() {
 
 }
 
-document
-.getElementById("buscarNombre")
-.addEventListener(
-    "input",
-    aplicarFiltros
-);
+        document.getElementById("buscarNombre").addEventListener( "input", aplicarFiltros);
 
-document
-.getElementById("filtroArea")
-.addEventListener(
-    "change",
-    aplicarFiltros
-);
+        document.getElementById("filtroArea").addEventListener( "change",aplicarFiltros);
 
-document
-.getElementById("filtroFecha")
-.addEventListener(
-    "change",
-    aplicarFiltros
-);
+        document.getElementById("filtroFecha").addEventListener("change",aplicarFiltros);
 
-document
-.getElementById("btnExcel")
-.addEventListener(
-    "click",
-    () => {
+        document.getElementById("btnExcel").addEventListener(
+            "click",
+            () => {
 
-        document
-.getElementById("btnExcel")
-.addEventListener(
-    "click",
-    () => {
+                document
+        .getElementById("btnExcel")
+        .addEventListener(
+            "click",
+            () => {
 
-        const inicio =
-            document
-            .getElementById(
-                "fechaInicio"
-            )
-            .value;
+        const inicio = document.getElementById( "fechaInicio" ) .value;
 
-        const fin =
-            document
-            .getElementById(
-                "fechaFin"
-            )
-            .value;
+        const fin =document .getElementById( "fechaFin" ) .value;
 
-        let url =
-            "/api/exportar";
+        let url = "/api/exportar";
 
         if (inicio && fin) {
 
-            url +=
-                `?inicio=${inicio}&fin=${fin}`;
+            url +=`?inicio=${inicio}&fin=${fin}`;
 
         }
 
-        window.open(
-            url,
-            "_blank"
-        );
+        window.open( url, "_blank");
 
     }
 );

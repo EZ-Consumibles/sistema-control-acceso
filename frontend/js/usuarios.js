@@ -2,10 +2,7 @@ document
 .getElementById("area")
 .addEventListener("change", () => {
 
-    const area =
-        document
-        .getElementById("area")
-        .value;
+    const area = document .getElementById("area").value;
 
     document
         .getElementById("otroAreaContainer")
@@ -16,43 +13,27 @@ document
 
 });
 
-document
-.getElementById("btnRegistrar")
-.addEventListener("click", async () => {
+document.getElementById("btnRegistrar").addEventListener("click", async () => {
 
-    const nombre =
-        document
-        .getElementById("nombre")
-        .value
-        .trim();
+    const nombre = document.getElementById("nombre") .value.trim();
 
-    let area =
-        document
-        .getElementById("area")
-        .value;
+    let area = document.getElementById("area").value;
 
     if (area === "Otros") {
 
-        area =
-            document
-            .getElementById("otroArea")
-            .value
-            .trim();
+        area =document .getElementById("otroArea") .value.trim();
 
     }
 
     if (!nombre || !area) {
 
-        alert(
-            "Complete todos los campos"
-        );
+        alert( "Complete todos los campos");
 
         return;
 
     }
 
-    const respuesta =
-        await fetch("/api/usuarios", {
+    const respuesta = await fetch("/api/usuarios", {
 
             method: "POST",
 
@@ -68,8 +49,7 @@ document
 
         });
 
-    const resultado =
-        await respuesta.json();
+    const resultado = await respuesta.json();
 
     alert(resultado.mensaje);
 

@@ -75,17 +75,13 @@ async function cargarResumen() {
 
     try {
 
-        const usuariosResp =
-            await fetch("/api/usuarios");
+        const usuariosResp = await fetch("/api/usuarios");
 
-        const usuarios =
-            await usuariosResp.json();
+        const usuarios =  await usuariosResp.json();
 
-        const historialResp =
-            await fetch("/api/historial");
+        const historialResp = await fetch("/api/historial");
 
-        const historial =
-            await historialResp.json();
+        const historial = await historialResp.json();
 
         const activos =
             historial.filter(
@@ -93,8 +89,7 @@ async function cargarResumen() {
                 acceso.estado === "activo"
             );
 
-        const accesosFinalizados =
-    historial.filter(
+        const accesosFinalizados = historial.filter(
         acceso =>
         acceso.estado === "finalizado"
     );
@@ -113,8 +108,7 @@ async function cargarResumen() {
 
         const hoy = new Date();
 
-        const accesosHoy =
-            historial.filter(acceso => {
+        const accesosHoy = historial.filter(acceso => {
 
                 if (!acceso.entrada?._seconds) {
 
@@ -122,10 +116,7 @@ async function cargarResumen() {
 
                 }
 
-                const fechaAcceso =
-                    new Date(
-                        acceso.entrada._seconds * 1000
-                    );
+                const fechaAcceso = new Date( acceso.entrada._seconds * 1000 );
 
                 return (
 
@@ -164,59 +155,29 @@ async function cargarResumen() {
 
             if (areas[area] > maxIngresos) {
 
-                maxIngresos =
-                    areas[area];
+                maxIngresos = areas[area];
 
-                areaMasActiva =
-                    area;
+                areaMasActiva = area;
 
             }
 
         }
 
-        document
-            .getElementById(
-                "usuariosRegistrados"
-            )
-            .textContent =
-            usuarios.length;
+        document.getElementById( "usuariosRegistrados" ).textContent = usuarios.length;
 
-        document
-            .getElementById(
-                "personasDentro"
-            )
-            .textContent =
-            activos.length;
+        document .getElementById( "personasDentro" ).textContent = activos.length;
 
-        document
-            .getElementById(
-                "accesosTotales"
-            )
-            .textContent =
-            historial.length;
+        document.getElementById( "accesosTotales").textContent =historial.length;
 
-        document
-            .getElementById(
-                "accesosHoy"
-            )
-            .textContent =
-            accesosHoy.length;
+        document .getElementById( "accesosHoy" ) .textContent =accesosHoy.length;
 
-        document.getElementById("tiempoPromedio")
-            .textContent =formatearTiempo(tiempoPromedio);
+        document.getElementById("tiempoPromedio") .textContent =formatearTiempo(tiempoPromedio);
 
-        document
-            .getElementById(
-                "areaMasActiva"
-            )
-            .textContent =
-            areaMasActiva;
+        document .getElementById( "areaMasActiva"  ) .textContent = areaMasActiva;
 
     } catch(error){
 
-        console.error(
-            error
-        );
+        console.error( error );
 
     }
 
@@ -224,41 +185,27 @@ async function cargarResumen() {
 
 function irHistorial(){
 
-    sessionStorage.setItem(
-        "destino",
-        "historial.html"
-    );
+    sessionStorage.setItem( "destino", "historial.html");
 
-    location.href =
-        "login.html";
+    location.href = "login.html";
 
 }
 
 function irEstadisticas(){
 
-    sessionStorage.setItem(
-        "destino",
-        "estadisticas.html"
-    );
+    sessionStorage.setItem( "destino","estadisticas.html" );
 
-    location.href =
-        "login.html";
+    location.href = "login.html";
 
 }
 
 function cerrarSesion(){
 
-    sessionStorage.removeItem(
-        "admin"
-    );
+    sessionStorage.removeItem("admin" );
 
-    sessionStorage.removeItem(
-        "destino"
-    );
+    sessionStorage.removeItem( "destino");
 
-    alert(
-        "Sesión cerrada"
-    );
+    alert( "Sesión cerrada" );
 
 }
 

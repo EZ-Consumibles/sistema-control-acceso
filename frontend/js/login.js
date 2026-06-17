@@ -19,13 +19,9 @@ const firebaseConfig = {
 
 };
 
-const app =
-    initializeApp(
-        firebaseConfig
-    );
+const app =initializeApp( firebaseConfig);
 
-const auth =
-    getAuth(app);
+const auth = getAuth(app);
 
 document
 .getElementById("btnLogin")
@@ -35,41 +31,21 @@ document
 
         try {
 
-            const email =
-                document
-                .getElementById("email")
-                .value;
+            const email =document.getElementById("email").value;
 
-            const password =
-                document
-                .getElementById("password")
-                .value;
+            const password = document.getElementById("password").value;
 
-            await signInWithEmailAndPassword(
-                auth,
-                email,
-                password
-            );
+            await signInWithEmailAndPassword( auth, email, password );
 
-            sessionStorage.setItem(
-                "admin",
-                "true"
-            );
+            sessionStorage.setItem( "admin", "true" );
 
-            const destino =
-                sessionStorage.getItem(
-                    "destino"
-                );
+            const destino = sessionStorage.getItem("destino");
 
-            location.href =
-                destino ||
-                "index.html";
+            location.href =destino || "index.html";
 
         } catch(error){
 
-            alert(
-                "Credenciales incorrectas"
-            );
+            alert( "Credenciales incorrectas" );
 
         }
 

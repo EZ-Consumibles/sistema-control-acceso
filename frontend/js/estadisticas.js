@@ -4,23 +4,16 @@ if (
     ) !== "true"
 ){
 
-    location.href =
-        "login.html";
-
+    location.href = "login.html";
 }
 
 function formatearTiempo(segundos) {
 
-    const horas =
-        Math.floor(segundos / 3600);
+    const horas =Math.floor(segundos / 3600);
 
-    const minutos =
-        Math.floor(
-            (segundos % 3600) / 60
-        );
+    const minutos =Math.floor( (segundos % 3600) / 60 );
 
-    const segundosRestantes =
-        segundos % 60;
+    const segundosRestantes = segundos % 60;
 
     return `${horas
         .toString()
@@ -36,31 +29,17 @@ async function cargarEstadisticas() {
 
     try {
 
-        const accesosResp =
-            await fetch("/api/historial");
+        const accesosResp =  await fetch("/api/historial");
 
-        const accesos =
-            await accesosResp.json();
+        const accesos = await accesosResp.json();
 
-        const usuariosResp =
-            await fetch("/api/usuarios");
+        const usuariosResp = await fetch("/api/usuarios");
 
-        const usuarios =
-            await usuariosResp.json();
+        const usuarios =  await usuariosResp.json();
 
-        document
-            .getElementById(
-                "totalAccesos"
-            )
-            .textContent =
-            accesos.length;
+        document.getElementById( "totalAccesos" ) .textContent = accesos.length;
 
-        document
-            .getElementById(
-                "totalUsuarios"
-            )
-            .textContent =
-            usuarios.length;
+        document.getElementById("totalUsuarios") .textContent = usuarios.length;
 
         const areas = {};
 
@@ -78,12 +57,9 @@ async function cargarEstadisticas() {
 
             }
 
-            areas[acceso.area]
-                .ingresos++;
+            areas[acceso.area].ingresos++;
 
-            areas[acceso.area]
-                .tiempo +=
-                acceso.tiempoSegundos || 0;
+            areas[acceso.area].tiempo += acceso.tiempoSegundos || 0;
 
         });
 
@@ -139,17 +115,13 @@ async function cargarEstadisticas() {
 
                 etiquetas.push(area);
 
-                valores.push(
-                    datos.ingresos
-                );
+                valores.push( datos.ingresos);
 
             });
 
         new Chart(
 
-            document.getElementById(
-                "graficaAreas"
-            ),
+            document.getElementById("graficaAreas"),
 
             {
 

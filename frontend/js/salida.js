@@ -1,8 +1,6 @@
-const txtNombre =
-    document.getElementById("nombre");
+const txtNombre =document.getElementById("nombre");
 
-const sugerencias =
-    document.getElementById("sugerencias");
+const sugerencias =document.getElementById("sugerencias");
 
 txtNombre.addEventListener("input", async () => {
 
@@ -15,30 +13,23 @@ txtNombre.addEventListener("input", async () => {
 
     }
 
-    const respuesta =
-        await fetch(
-            `/api/usuarios/buscar?nombre=${texto}`
-        );
+    const respuesta = await fetch( `/api/usuarios/buscar?nombre=${texto}` );
 
-    const usuarios =
-        await respuesta.json();
+    const usuarios = await respuesta.json();
 
     sugerencias.innerHTML = "";
 
     usuarios.forEach(usuario => {
 
-        const div =
-            document.createElement("div");
+        const div = document.createElement("div");
 
         div.classList.add("persona");
 
-        div.textContent =
-            `${usuario.nombre} - ${usuario.area}`;
+        div.textContent = `${usuario.nombre} - ${usuario.area}`;
 
         div.onclick = () => {
 
-            txtNombre.value =
-                usuario.nombre;
+            txtNombre.value = usuario.nombre;
 
             sugerencias.innerHTML = "";
 
@@ -54,8 +45,7 @@ document
 .getElementById("btnSalida")
 .addEventListener("click", async () => {
 
-    const nombre =
-        txtNombre.value.trim();
+    const nombre = txtNombre.value.trim();
 
     const numeroCandado =
         document
@@ -63,8 +53,7 @@ document
         .value
         .trim();
 
-    const respuesta =
-        await fetch("/api/salida", {
+    const respuesta = await fetch("/api/salida", {
 
             method: "POST",
 
